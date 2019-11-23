@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+# XCommerce Angular Client
+This is the Angular-based PWA front-end of the enterprise-class XCommerce application
+
 # Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
@@ -27,6 +29,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 =======
-# XCommerce Angular Client
-This is the Angular-based PWA front-end of the enterprise-class XCommerce application
->>>>>>> f17f3d51708eb74d30963c2a8156882cc7fdb0d6

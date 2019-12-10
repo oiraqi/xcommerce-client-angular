@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductComponent } from './components/product/product.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
@@ -10,7 +11,8 @@ import { ProductsComponent } from './components/products/products.component';
   imports: [
     CommonModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ],
   exports: [ProductComponent, ProductsComponent]
 })

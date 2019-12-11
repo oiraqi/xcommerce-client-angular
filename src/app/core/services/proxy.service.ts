@@ -20,7 +20,7 @@ export class ProxyService {
 
   getProducts() {
     this.httpClient.get(this.productsURL).subscribe((response: any) => {
-       this.products = this.parse(response, 'products');
+      this.products = this.parse(response, 'products');
     });
   }
 

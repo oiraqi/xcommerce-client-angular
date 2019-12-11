@@ -19,7 +19,9 @@ export class ProductComponent implements OnInit {
   }
 
   getBrandId() {
-    return 0;
+    const brandHref = this.product._links.brand.href;
+    const temp = brandHref.substring(brandHref.indexOf('/products/') + 10);
+    return temp.substring(0, temp.indexOf('/'));
   }
 
 }

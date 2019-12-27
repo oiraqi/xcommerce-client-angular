@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProxyService } from '../../../core/services/proxy.service';
 
 @Component({
@@ -8,10 +9,33 @@ import { ProxyService } from '../../../core/services/proxy.service';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(public proxyService: ProxyService) { }
+  products: any;
+  brandsURL = 'http://localhost:8080/rest/catalog/brands';
+  categoriesURL = 'http://localhost:8080/rest/catalog/categories';
+
+  constructor(private proxyService: ProxyService,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.proxyService.getProducts();
+    this.activatedRoute.queryParamMap.subscribe(paramMap => {
+      if (paramMap) {
+        const brandId = parseInt(paramMap.get('brandId'), 10);
+        if (brandId || brandId === 0) {
+          const href = this.brandsURL + `/${brandId}/products`;
+          this.products = this.proxyService.getProducts(href);
+          return;
+        }
+        const categoryId = parseInt(paramMap.get('categoryId'), 10);
+        if (categoryId || categoryId === 0) {
+          const href = this.categoriesURL + `/${categoryId}/products`;
+          this.products = this.proxyService.getProducts(href);
+          return;
+        }
+        this.products = this.proxyService.getProducts();
+        return;
+      }
+      this.products = this.proxyService.getProducts();
+    });
   }
 
 }

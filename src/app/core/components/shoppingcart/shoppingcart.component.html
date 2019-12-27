@@ -1,0 +1,26 @@
+<table mat-table [dataSource]="shoppingCartService.elements" class="mat-elevation-z8">
+  <ng-container matColumnDef="product">
+    <td mat-cell *matCellDef="let element" class="product">
+      {{ element.product.brand.name + ' ' + element.product.name }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="price">
+    <td mat-cell *matCellDef="let element" class="price">
+      {{ element.product.price | currency }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="quantity">
+    <td mat-cell *matCellDef="let element" class="quantity">
+      {{ element.quantity }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <td mat-cell *matCellDef="let element" class="actions">
+      <button (click)="shoppingCartService.addProduct(element.product, 1)">+</button>
+      <button (click)="shoppingCartService.removeProductQuantity(element.product, 1)">-</button>
+      <button (click)="shoppingCartService.removeProduct(element.product)">x</button>
+    </td>
+  </ng-container>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<p class="total">Total: {{ shoppingCartService.totalPrice | currency }}</p>

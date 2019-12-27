@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ShoppingCartService } from 'src/app/core/services/shoppingcart.service';
 
 @Component({
   selector: 'app-product',
@@ -12,16 +13,14 @@ export class ProductComponent implements OnInit {
 
   imagePath: string;
 
-  constructor() { }
+  constructor(private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
-    this.imagePath = 'http://localhost:8080/images/' + this.getBrandId() + '/' + this.product.image;
+    this.imagePath = 'http://localhost:8080/images/' + this.product.brand.id + '/' + this.product.image;
   }
 
-  getBrandId() {
-    const brandHref = this.product._links.brand.href;
-    const temp = brandHref.substring(brandHref.indexOf('/products/') + 10);
-    return temp.substring(0, temp.indexOf('/'));
+  addToShoppingCart() {
+    this.shoppingCartService.addProduct(this.product, 1);
   }
 
 }

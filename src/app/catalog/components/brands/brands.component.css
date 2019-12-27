@@ -1,0 +1,8 @@
+.brands {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 7vh;
+    left: 0;
+    right: 0;
+}

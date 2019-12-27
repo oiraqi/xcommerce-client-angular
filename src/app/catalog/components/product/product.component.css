@@ -1,8 +1,12 @@
 .product {
-    max-width: 400px;
-  }
-  
-  .example-product {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+    width: 100px;
+    text-align: center;
+}
+
+.product-title {
+  font-size: 80%;
+}
+
+.product-actions {
+  text-align: right;
+}

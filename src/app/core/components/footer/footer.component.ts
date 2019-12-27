@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProxyService } from '../../services/proxy.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -8,9 +9,13 @@ import { ProxyService } from '../../services/proxy.service';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(public proxyService: ProxyService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  navigate(path: string) {
+    this.router.navigateByUrl(path);
   }
 
 }

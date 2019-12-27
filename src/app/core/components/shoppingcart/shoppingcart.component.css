@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+}
+
+td {
+    font-size: 75%;
+}
+
+td.product {
+    width: 40%;
+}
+
+td.price {
+    width: 20%;
+}
+
+td.quantity {
+    width: 5%;
+}
+
+td.actions {
+    width: 35%;
+}
+
+p.total {
+    font-weight: bold;
+    text-align: right;
+    padding: 5px;
+}

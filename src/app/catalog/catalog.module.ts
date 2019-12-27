@@ -1,18 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './components/product/product.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule,
+         MatListModule,
+         MatGridListModule,
+         MatIconModule,
+         MatDividerModule,
+         MatMenuModule } from '@angular/material';
 import { ProductsComponent } from './components/products/products.component';
+import { BrandsComponent } from './components/brands/brands.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
-  declarations: [ProductComponent, ProductsComponent],
+  declarations: [ProductComponent, ProductsComponent, BrandsComponent, CategoriesComponent],
   imports: [
     CommonModule,
     MatCardModule,
+    MatListModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatDividerModule,
+    MatMenuModule
   ],
   exports: [ProductComponent, ProductsComponent]
 })

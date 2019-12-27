@@ -8,23 +8,6 @@
     <button mat-button (click)="navigate()">
       <mat-icon matBadge="{{ shoppingCartService.numberOfProducts }}" matBadgeColor="accent">shopping_cart</mat-icon>
     </button>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="my()">
-        <mat-icon>account_box</mat-icon>
-        <span>Mon compte</span>
-      </button>
-      <button mat-menu-item (click)="about()">
-        <mat-icon>touch_app</mat-icon>
-        <span>À propos</span>
-      </button>
-      <button mat-menu-item (click)="logout()">
-        <mat-icon>arrow_right_alt</mat-icon>
-        <span>Se déconnecter</span>
-      </button>
-    </mat-menu>
   </mat-toolbar>
 </div>
 <div class="breadcrumb">

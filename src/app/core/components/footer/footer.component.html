@@ -1,13 +1,24 @@
 <div class="footer">
-<mat-toolbar color="primary">
-  <button mat-button (click)="navigate('')">
-    <mat-icon>home</mat-icon>
-  </button>
-  <button mat-button (click)="navigate('/categories')">
-    <mat-icon>category</mat-icon>
-  </button>
-  <button mat-button (click)="navigate('/brands')">
-    <mat-icon>widgets</mat-icon>
-  </button>
-</mat-toolbar>
+  <mat-toolbar color="primary">
+    <div class="footer_menu">
+      <button mat-button (click)="navigate('')">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+    <div class="footer_menu">
+      <button mat-button (click)="navigate('/categories')">
+        <mat-icon>category</mat-icon>
+      </button>
+    </div>
+    <div class="footer_menu">
+      <button mat-button (click)="navigate('/brands')">
+        <mat-icon>widgets</mat-icon>
+      </button>
+    </div>
+    <div class="footer_menu">
+      <button mat-button (click)="navigate('/brands')">
+        <mat-icon>person</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
 </div>
